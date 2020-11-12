@@ -1,0 +1,8 @@
+Requirements for script:
+1. Rename columns to 'manfacturer_sku', 'stock', 'eta'
+2. Warning duplicate rows based on sku
+3. python script-name.py manufacturer path-to-original-file
+4. create excel in folder with name of today's date and excel name to be manufacturer name+today's date
+5. strip values
+6. validate stock column
+7. validate eta column
