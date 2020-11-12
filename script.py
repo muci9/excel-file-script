@@ -59,20 +59,20 @@ if __name__ == '__main__':
     sheet['C1'] = ETA_COLUMN_NAME
 
     # parse third column and strip leading and trailling whitespaces
-    print('Parsing second column, stripping whitespaces and checing for date')
+    print('Parsing second column, stripping whitespaces and checking for date')
     for row in range(2, sheet.max_row + 1):
         cell_name = 'C{}'.format(row)
         original_value = sheet[cell_name].value
         stripped_value = str(original_value).strip()
         sheet[cell_name].value = stripped_value
         if sheet[cell_name].is_date is False:
-            print("Cell " + cell_name + " is not a correct date")
+            print('Cell ' + cell_name + ' is not a correct date')
 
     # save new workbook
     if not os.path.exists(DESTINATION_FOLDER_PATH + os.path.sep + TODAY_DATE):
         os.makedirs(DESTINATION_FOLDER_PATH + os.path.sep + TODAY_DATE)
     destination_path = DESTINATION_FOLDER_PATH + os.path.sep + TODAY_DATE
-    new_workbook_name = args.manufacturer + "-" + TODAY_DATE
+    new_workbook_name = args.manufacturer + '-' + TODAY_DATE
     workbook.save(destination_path + os.path.sep + new_workbook_name + EXCEL_FILETYPE)
 
 
